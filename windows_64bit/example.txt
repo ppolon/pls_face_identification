@@ -1,0 +1,7 @@
+- The following command is used to perform face identification considering the subset of the FERET dataset sent with the software. The file features.txt defines the feature extraction methods used to perform the identification (this set of features is a subset of the features used in the TIP paper).
+
+./PFI.exe -r  --facePartitionQuery fb_small --faceFactors 3,5,7 --faceSampleDir ../SampleData/smallFERET/images/ --facePartitionFile ../SampleData/smallFERET/partitions/fa_small.txt  --featureModels ../SampleData/smallFERET/parameters/features.txt --output results/
+
+This example must be executed from the software directory. It executes face identification considering partition fa_small as gallery and  fb_small as the probe samples. Note: the directory results must be created before-hand, inside the directory software.
+
+Note: To obtain the data (cropped images and partition files) used in our ECCV and TIP papers, please send an e-mail to william@dcc.ufmg.br

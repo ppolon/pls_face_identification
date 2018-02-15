@@ -1,0 +1,43 @@
+# features used in the TIP paper
+
+#internal identifier (ignore this)
+ModelID <faceFERETallfeatures>
+
+#features methods used, eg. HOG, MEAN, GABOR, LBP, MSLBP
+method <HOG,HOG,0,HOGPARAM>
+#method <MEAN,MEANFEATURE,0,MEANFEATUREPARAM>
+#method <GABOR,GABORFEATURE,0,GABORFEATUREPARAM>
+#method <LBP,LBPFEATURE,0,LBPFEATUREPARAM>
+#method <MSLBP,MSLBPFEATURE,0,MSLBPFEATUREPARAM>
+
+#feature parameters
+params <HOGPARAM,UseColorFrequency,1>
+params <HOGPARAM,UseHOG,1>
+params <HOGPARAM,cache,0>
+params <LBPFEATUREPARAM,cache,0>
+params <GABORFEATUREPARAM,w,110>
+params <GABORFEATUREPARAM,h,110>
+params <GABORFEATUREPARAM,cache,0>
+params <MEANFEATUREPARAM,cache,0>
+params <MSLBPFEATUREPARAM,cache,0>
+
+#block sizes and strides for each feature
+block <HOG,16,16,4,4,5>
+block <HOG,32,32,8,8,5>
+block <LBPFEATURE,32,32,16,16,5>
+block <GABORFEATURE,110,110,1,1,5>
+block <MSLBPFEATURE,32,32,16,16,5>
+#block <MEANFEATURE,4,4,2,2,5>
+block <MEANFEATURE,110,110,1,1,5>
+
+#classifier to be used and default number of factors
+classifier <plsReg>
+factors <20>
+#window/object: the size of face image
+#region: region to extract features
+window <110,110>
+object <0,0,110,110>
+region <0,0,109,109>
+
+
+
